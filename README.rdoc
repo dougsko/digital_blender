@@ -1,6 +1,6 @@
 = digital_blender
 
-Description goes here.
+This is a Ruby implementation of the LavaRnd Digital Blender algorithm.
 
 == Contributing to digital_blender
  
