@@ -14,12 +14,17 @@ class DigitalBlender
         @hashed = []
         @n = 17
         @results = []
-        # for testing
-        960.times do |i|
-            SHA1.digest(i.to_s).each_byte do |b|
-                @data << b
-            end
+        # for testing @data holds 153600 bytes, size = 19200
+        #960.times do |i|
+        #    SHA1.digest(i.to_s).each_byte do |b|
+        #        @data << b
+        #    end
+        #end
+        
+        File.open('../sts-2.1.1/data/audio.dat') do |f|
+            @data = f.read(19200)
         end
+
     end
 
     def n_way_turn()
@@ -68,6 +73,8 @@ class DigitalBlender
                 @results << (@hashed[i][j] ^ @rotated[i][j])
             end
         end
+        # puts @results back into binary
+        # @results.pack("c*")
     end
 
 
