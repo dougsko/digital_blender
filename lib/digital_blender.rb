@@ -14,7 +14,7 @@ class DigitalBlender
         @hashed = []
         @n = 17
         @results = []
-        # for testing
+        # for testing (150KB)
         960.times do |i|
             SHA1.digest(i.to_s).each_byte do |b|
                 @data << b
